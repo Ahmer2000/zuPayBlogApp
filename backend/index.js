@@ -24,7 +24,7 @@ app.use(json());
 app.use(cookieParser());
 app.use('/uploads',static_tatic(__dirname + '/uploads'));
 
-let port = process.env.PORT || 4001;
+let port = process.env.PORT || 3001;
 connect(process.env.MONGO_URI);
 // console.log(process.env.MONGO_URI);
 
