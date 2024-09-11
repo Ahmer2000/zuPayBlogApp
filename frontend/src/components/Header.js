@@ -5,12 +5,12 @@ import {UserContext} from './UserContext'
 function Header() {
     const{setUserInfo,userInfo} = useContext(UserContext)
     useEffect(()=>{
-        fetch('http://localhost:3001/profile',{
+        fetch('https://zupayblogappbackend.onrender.com/profile',{
             credentials:'include',
         }).then(response=>{response.json().then(userInfo=>{setUserInfo(userInfo)})})
     },[]);
     async function logout(){
-        await fetch('http://localhost:3001/logout',{
+        await fetch('https://zupayblogappbackend.onrender.com/logout',{
             method:'POST',
             credentials:'include',
         })
