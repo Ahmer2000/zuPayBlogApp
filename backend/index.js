@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads',express.static(__dirname + '/uploads'));
 
-let port = process.env.PORT||7000;
+let port = process.env.PORT || 4001;
 mongoose.connect(process.env.MONGO_URI);
 // console.log(process.env.MONGO_URI);
 
