@@ -5,7 +5,7 @@ function IndexPage() {
     const [posts, setPosts] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:3001/createNewPost').then(response=>{response.json().then(posts=>{setPosts(posts);})})
+        fetch('https://zupayblogappbackend.onrender.com/createNewPost').then(response=>{response.json().then(posts=>{setPosts(posts);})})
     },[]);
     return ( 
         <>
