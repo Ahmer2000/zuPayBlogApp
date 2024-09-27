@@ -8,11 +8,11 @@ function PostPage() {
     const {userInfo} = useContext(UserContext)
     const [postInfo, setPostInfo] = useState(null);
     useEffect(() => {
-        fetch(`https://zupayblogappbackend.onrender.com/post/${id}`).then(response=>{response.json().then(postInfo=>{setPostInfo(postInfo)})})
+        fetch(`http://localhost:3001/post/${id}`).then(response=>{response.json().then(postInfo=>{setPostInfo(postInfo)})})
     },[]);
 
     async function deletePost() {
-        await fetch(`https://zupayblogappbackend.onrender.com/deletePost/${id}`,{
+        await fetch(`http://localhost:3001/deletePost/${id}`,{
             method:'DELETE',
             credentials:'include',
         })
@@ -31,7 +31,7 @@ function PostPage() {
                     </div>
                 </div>
                 <div className="postImg">
-                    <img src={`https://zupayblogappbackend.onrender.com/${postInfo.blogImg}`} alt="blogPostImage"></img>
+                    <img src={`http://localhost:3001/${postInfo.blogImg}`} alt="blogPostImage"></img>
                 </div>
                 <p className="postContent" dangerouslySetInnerHTML={{__html:postInfo.content}}></p>
                 <div className="postHandling">

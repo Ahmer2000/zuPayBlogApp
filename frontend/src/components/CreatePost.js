@@ -20,7 +20,7 @@ function CreatePost() {
         formData.set('file',files[0]);
 
         console.log(files);
-        const response = await fetch('https://zupayblogappbackend.onrender.com/createNewPost',{
+        const response = await fetch('http://localhost:3001/createNewPost',{
             method:'POST',
             body:formData,
             credentials:'include',

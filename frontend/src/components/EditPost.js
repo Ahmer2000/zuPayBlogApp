@@ -12,7 +12,7 @@ function EditPost() {
     const [redirect, setRedirect] = useState(false)
 
     useEffect(()=>{
-        fetch(`https://zupayblogappbackend.onrender.com/post/${id}`).then(response=>{response.json().then(postInfo=>{
+        fetch(`http://localhost:3001/post/${id}`).then(response=>{response.json().then(postInfo=>{
             setTitle(postInfo.title);
             setSummary(postInfo.summary);
             setContent(postInfo.content);
@@ -29,7 +29,7 @@ function EditPost() {
         if (files?.[0]) {
             formData.set('file',files?.[0]);
         }
-        const response = await fetch('https://zupayblogappbackend.onrender.com/createNewPost',{
+        const response = await fetch('http://localhost:3001/createNewPost',{
             method:'PUT',
             body:formData,
             credentials:'include',
